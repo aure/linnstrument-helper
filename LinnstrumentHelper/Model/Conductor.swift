@@ -88,20 +88,20 @@ class Conductor: AKMIDIListener, ObservableObject {
             
             self.notesHeld.insert(UInt8(self.midiEngine.midiToSmallGrid(noteNumber: noteNumber)), at: self.notesHeld.endIndex)
 
-            self.smallNote1GridPos = self.notesHeld.dropFirst(1).first ?? nil
-            self.smallNote2GridPos = self.notesHeld.dropFirst(2).first ?? nil
-            self.smallNote3GridPos = self.notesHeld.dropFirst(3).first ?? nil
-            self.smallNote4GridPos = self.notesHeld.dropFirst(4).first ?? nil
-            self.smallNote5GridPos = self.notesHeld.dropFirst(5).first ?? nil
+            self.smallNote1GridPos = self.notesHeld.dropFirst(1).first
+            self.smallNote2GridPos = self.notesHeld.dropFirst(2).first
+            self.smallNote3GridPos = self.notesHeld.dropFirst(3).first
+            self.smallNote4GridPos = self.notesHeld.dropFirst(4).first
+            self.smallNote5GridPos = self.notesHeld.dropFirst(5).first
 
             self.noteNames.insert(noteNumber, at: self.noteNames.endIndex)
             
-            self.note1 = self.noteNames.dropFirst(1).first ?? nil
-            self.note2 = self.noteNames.dropFirst(2).first ?? nil
-            self.note3 = self.noteNames.dropFirst(3).first ?? nil
-            self.note4 = self.noteNames.dropFirst(4).first ?? nil
-            self.note5 = self.noteNames.dropFirst(5).first ?? nil
-            
+            self.note1 = self.noteNames.dropFirst(1).first
+            self.note2 = self.noteNames.dropFirst(2).first
+            self.note3 = self.noteNames.dropFirst(3).first
+            self.note4 = self.noteNames.dropFirst(4).first
+            self.note5 = self.noteNames.dropFirst(5).first
+
             self.noteOneName = self.note1 != nil ? self.midiEngine.midiToNote(noteNumber: self.note1!) : ""
             self.noteTwoName = self.note2 != nil ? self.midiEngine.midiToNote(noteNumber: self.note2!) : ""
             self.noteThreeName = self.note3 != nil ? self.midiEngine.midiToNote(noteNumber: self.note3!) : ""
